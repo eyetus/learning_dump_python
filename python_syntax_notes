@@ -1,11 +1,10 @@
 ######################
-# Python Sytax Notes #
+# Python Syntax Notes #
 ######################
 
-
-# ====================================
+# ========================================================================
 # Functions
-# ====================================
+# ========================================================================
 
 def say_hi(name, age):
 	print("Hello " + name + "You are " + str(age))
@@ -59,9 +58,9 @@ message = input("> ")
 print(func_emoji(message))
 
 
-# ====================================
+# ========================================================================
 # If Statements
-# ====================================
+# ========================================================================
 
 is_male = True
 is_tall = True
@@ -102,4 +101,89 @@ else:
 
 def max_num(num1, num2, num3):
 	if num1	>= num2 and num1 >= num3:
-		
+
+# ------------------------------------
+
+num1 = float(input("Enter first number: "))
+op = input("Enter operator: ")
+num2 = float(input("Enter second number: "))
+
+if op == "+":
+    print(num1 + num2)
+elif op == "-":
+    print(num1 - num2)
+elif op == "/":
+    print(num1 / num2)
+elif op == "*":
+    print(num1 * num2)
+else:
+    print("Invalid operator")
+
+
+# ========================================================================
+# Dictionaries
+# ========================================================================
+
+monthConversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(monthConversions["Jan"])
+print(monthConversions.get("Dec"))
+print(monthConversions.get("Hello", "'Hello' not in dictionary!"))
+
+# ------------------------------------
+
+customer = {
+	“name”: “John Smith”
+	“age”: 30
+	“is verified”: True
+}
+customer[“birthdate”] = “1st Jan 1980”
+print (customer.get(“age”))
+print (customer.get(“email”, “Default response”) # will return ‘None’ if key doesn’t exist
+print (customer[“name”])
+
+# ------------------------------------
+
+digitmap = {
+    "1": "One",
+    "2": "Two",
+    "3": "Three",
+    "4": "Four"
+}
+
+phone = input("Phone: ")
+output = ""
+
+for number in phone:
+    output += ((digitmap.get(number, “!”))) + " "
+print (output)
+
+# ------------------------------------
+
+message = input("> ")
+words = message.split(" ")
+emoji_map = {
+    ":)": "🙂",
+    ":(": "😞",
+    "xD": "😆",
+    "rofl": "🤣"
+}
+output = ""
+for word in words:
+    output += emoji_map.get(word, word) + " "
+print(output)
+
+# ------------------------------------
