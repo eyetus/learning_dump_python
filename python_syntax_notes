@@ -1,0 +1,102 @@
+# python_syntax_notes
+
+# ====================================
+# Functions
+# ====================================
+
+def say_hi(name, age):
+	print("Hello " + name + "You are " + str(age))
+
+
+say_hi("Mike", 35)
+say_hy("Steve", 70)
+
+# ------------------------------------
+
+def cube(num):
+	return num*num*num
+
+
+print(cube(3))
+
+# ------------------------------------
+
+def greet_user(first_name, last_name):
+	print(f”Hello, {first_name} {last_name”} 	print(“Welcome”)
+
+
+greet_user(“John, Smith”)
+greet_user(first_name=“Ivan, last_name=“Toney”)
+
+# ------------------------------------
+
+def square(number)
+	return number * number
+
+
+print(square(3))
+
+# ------------------------------------
+
+def func_emoji(message):
+    words = message.split(" ")
+    emoji_map = {
+        ":)": "🙂",
+        ":(": "😞",
+        "xD": "😆",
+        "rofl": "🤣"
+    }
+    output = ""
+    for word in words:
+        output += emoji_map.get(word, word) + " "
+    return output
+
+
+message = input("> ")
+print(func_emoji(message))
+
+
+# ====================================
+# If Statements
+# ====================================
+
+is_male = True
+is_tall = True
+
+if is_male and is_tall:
+	print("You are a tall male")
+elif is_male and not (is_tall):
+	print("You are a short male")
+elif not(is_male) and is_tall:
+	print("You are not a male but are tall")
+else:
+	print("You are not a male and not all")
+
+# ------------------------------------
+
+name = input("Enter your name: ")
+
+if len(name) < 3:
+    print("Error: Name must be at least 3 characters")
+elif len(name) > 10:
+    print("Name must be a maximum of 10 characters")
+else:
+    print("Valid name")
+
+# ------------------------------------
+
+weight = int(input("Weight: "))
+unit = input("(L)lbs or (K)g: ")
+
+if unit.upper() == "L":
+    converted = weight * 0.45
+    print(f"You are {converted} kilos")
+else:
+    converted = weight // 0.45
+    print(f"You are {converted} pounds")
+
+# ------------------------------------
+
+def max_num(num1, num2, num3):
+	if num1	>= num2 and num1 >= num3:
+		
