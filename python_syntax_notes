@@ -598,6 +598,7 @@ try:
 	limit = args.limit
 except FileNotFoundError as err:
 	print(f"Error: {err}")
+	sys.exit(1)
 else:
 	with f:
 		lines = f.readlines()
