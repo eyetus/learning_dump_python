@@ -613,7 +613,32 @@ finally:
 	print('FIN!')
 			
 			
+# List comprehension (searching for word/snippet in words file)
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Search for words including partial word')
+parser.add_argument('snippet', help='partial (or complete) string to search for in words file')
+
+args = parser.parse_args()
+snippet = args.snippet.lower()
+
+with open('/usr/share/dict/words') as f:
+    words = f.readlines()
+
+matches = []
+
+for word in words:
+    if snippet in word.lower():
+        matches.append(word)
+
+print(matches)
+
+# or using comprehension to iterate list
+print([word.strip() for word in words if snippet in word.lower()])
 			
+
+
 # ========================================================================
 # Example Programs
 # ========================================================================
@@ -678,3 +703,57 @@ differece = mktime(stop_time) - mktime(start_time)
 
 print(f"Timer stopped at {strftime('%X', stop_time)}")
 print(f"Total time: {differece} seconds")
+
+
+# ------------------------------------------------------------------------
+
+# Receipts file generation and processing using 'random', 'json', 'os' & 'shutil'
+
+# Creating files with random key/values in JSON format using random.functions
+
+import random
+import json
+import os
+
+count = int(os.getev("FILE_COUNT") or 100)
+words = [word.strip() for word in open('/usr/share/dict/words').readlines()]
+
+for identifier in range(count):
+    amount = random.uniform(1.0, 1000)
+    content = {
+        'topic': random.choice(words),
+        'value': "%.2f" % amount
+    }
+    with open(f'./new/receipt-{identifier}.json', 'w') as f:
+        json.dump(content, f)
+
+
+
+# Create new directory with 'os'
+# get filenames with glob and add to 'receipts'
+# Iterate through 'receipts' adding 'content' dict values to subtotal
+# using shutil to move files to new directory and print total
+
+import random
+import json
+import os
+import shutil
+
+try:
+    os.mkdir('./processed')
+except OSError:
+    print("'processed' directory already exists")
+
+receipts = glob.glob('./new/reciept-[0-9]*.json')
+subtotal = 0.0
+
+for path in receipts:
+    with open(path) as f:
+        content = json.load(f)
+        subtotal += float(content['value'])
+    name = path.split("/")[-1]
+    destination = f"./processed/{name}"
+    shutil.move(path, destination)
+    print(f"moved '{path}' to '{destination}'")
+
+print("Reciept subtotal: $%/2f" % subtotal)
