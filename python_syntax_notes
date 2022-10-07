@@ -592,8 +592,23 @@ with open(args.filename) as f:
 	for line in lines:
 		print(line.strip()[::-1])
 
-
-
+# Same but using try/except: 
+try:
+	f = open(args.filename)
+	limit = args.limit
+except FileNotFoundError as err:
+	print(f"ErrorL {err}")
+else:
+	with f:
+		lines = f.readlines()
+		lines.reverse()
+		if args.limit:
+			lines = lines[:limit]
+		for line in lines:
+			print(line.strip()[::-1])
+			
+			
+			
 # ========================================================================
 # Example Programs
 # ========================================================================
