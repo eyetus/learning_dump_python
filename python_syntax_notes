@@ -602,8 +602,10 @@ else:
 	with f:
 		lines = f.readlines()
 		lines.reverse()
+		
 		if args.limit:
 			lines = lines[:limit]
+			
 		for line in lines:
 			print(line.strip()[::-1])
 			
