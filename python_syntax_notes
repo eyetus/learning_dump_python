@@ -13,7 +13,7 @@ def say_hi(name, age):
 say_hi("Mike", 35)
 say_hi("Steve", 70)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def cube(num):
     return num*num*num
@@ -21,7 +21,7 @@ def cube(num):
 
 print(cube(3))
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def greet_user(first_name, last_name):
     print(f"Hello, {first_name} {last_name}")
@@ -31,7 +31,7 @@ def greet_user(first_name, last_name):
 greet_user("John", "Smith")
 greet_user(first_name="Ivan", last_name="Tony")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def square(number):
     return number * number
@@ -39,7 +39,7 @@ def square(number):
 
 print(square(3))
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def func_emoji(message):
     words = message.split(" ")
@@ -58,7 +58,7 @@ def func_emoji(message):
 message = input("> ")
 print(func_emoji(message))
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def raise_to_power(base_num, pow_num):
     result = 1
@@ -69,7 +69,7 @@ def raise_to_power(base_num, pow_num):
 
 print(raise_to_power(3, 2))
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 def translate(phrase):
     translation = ""
@@ -104,7 +104,7 @@ elif not(is_male) and is_tall:
 else:
     print("You are not a male and not all")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 name = input("Enter your name: ")
 
@@ -115,7 +115,7 @@ elif len(name) > 10:
 else:
     print("Valid name")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 first = "Rich"
 last = ""
@@ -127,7 +127,7 @@ elif first:
 elif last:
 	print(f"Last name: {last}")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 weight = int(input("Weight: "))
 unit = input("(L)lbs or (K)g: ")
@@ -139,7 +139,7 @@ else:
     converted = weight // 0.45
     print(f"You are {converted} pounds")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 num1 = float(input("Enter first number: "))
 op = input("Enter operator: ")
@@ -181,7 +181,7 @@ print(monthConversions["Jan"])
 print(monthConversions.get("Dec"))
 print(monthConversions.get("Hello", "'Hello' not in dictionary!"))
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 customer = {
     "name": "John Smith",
@@ -194,13 +194,13 @@ print (customer.get("email", "Default response")) #will return ‘None’ if key
 print (customer["name"])
 customer["birthdate"] = "1st Jan 1980"
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 list_of_points = [(1, 2), (2, 3), (4, 5)]
 for x, y in list_of_points:
 	print(f"x: {x}, y: {y}")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 ages = {
 	'kevin': 59, 
@@ -212,7 +212,7 @@ for name, age in ages.items():
 	print(f"Person named: {name}")
 	print(f"Age of: {age}")
     
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 digitmap = {
     "1": "One",
@@ -228,7 +228,7 @@ for number in phone:
     output += digitmap.get(number, "!") + " "
 print (output)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 message = input("> ")
 words = message.split(" ")
@@ -256,7 +256,7 @@ while i <= 5:
     i += 1
 print("Done")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 count = 0
 while count < 10:
@@ -266,7 +266,7 @@ while count < 10:
 	print(f"We're counting odd numbers: {count}")
 	count += 1
     
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 secret_number = 9
 guess_count = 0
@@ -280,7 +280,7 @@ while guess_count < guess_limit:
 else:
     print("Sorry you failed!")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 secret_letter = "X"
 guess_count = 0
@@ -294,7 +294,7 @@ while guess_count < guess_limit:
 else:
     print("You failed!")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 secret_word = "giraffe"
 guess = ""
@@ -314,7 +314,7 @@ if out_of_guesses:
 else:
     print("You win!")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 command = ""
 started = False
@@ -353,22 +353,22 @@ quit - to quit
 for item in 'Python':
     print(item)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 for list in ['Rich', 'Georgie', 'Liam']:
     print(list)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 for number in [1, 2, 3, 4, 5]:
     print(number)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 for numbers in range(10):
     print(numbers)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 prices = [10, 20, 30]
 total = 0
@@ -376,7 +376,7 @@ for price in prices:
     total += price
 print(f"Total: {total}")
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 numbers = [2, 2, 2, 2, 5]
 for x_count in numbers:
@@ -385,7 +385,7 @@ for x_count in numbers:
         output += 'x'
     print(output)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 numbers = [3, 6, 2, 8, 4, 10]
 max = numbers[0]
@@ -394,7 +394,7 @@ for number in numbers:
         max = number
 print(max)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 numbers = [8, 8, 7, 8, 9, 9, 5, 4, 4, 1, 1, 2, 3, 3, 10]
 final = []
@@ -404,7 +404,7 @@ for item in numbers:
 final.sort()
 print(final)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 digitmap = {
     "1": "One",
@@ -420,7 +420,7 @@ for number in phone:
     output += digitmap.get(number, '!') + " "
 print (output)
 
-# ------------------------------------
+# ------------------------------------------------------------------------
 
 message = input("> ")
 words = message.split(" ")
@@ -495,3 +495,40 @@ while True:
         calculate_bmi(weight, height)
     else:
         print("Error: Unknown measurement system. Please use imperial or metric.")
+
+# ------------------------------------------------------------------------
+
+# Stopwatch using 'time' package 
+
+# Importing 'time' module:
+
+import time
+
+start_time = time.localtime()
+print(f"Timer started at {time.strftime('%X', start_time)}")
+
+# wait for user to stop timer
+input("Press 'Enter' to stop timer")
+
+stop_time = time.localtime()
+differece = time.mktime(stop_time) - time.mktime(start_time)
+
+print(f"Timer stopped at {time.strftime('%X', stop_time)}")
+print(f"Total time: {differece} seconds")
+
+
+# importing only the required functions from 'time' package:
+
+from time import localtime, mktime, strftime
+
+start_time = localtime()
+print(f"Timer started at {strftime('%X', start_time)}")
+
+# wait for user to stop timer
+input("Press 'Enter' to stop timer")
+
+stop_time = localtime()
+differece = mktime(stop_time) - mktime(start_time)
+
+print(f"Timer stopped at {strftime('%X', stop_time)}")
+print(f"Total time: {differece} seconds")
