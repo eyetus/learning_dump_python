@@ -1,0 +1,84 @@
+# Manual Python install CentOS
+
+yum update -y
+yum groupinstall -y "development tools"
+yum install -y lsof wget vim-enhanced words which
+
+yum install -y \
+libffi-devel \
+zlib-devel \
+bzip2-devel \
+openssl-devel \
+ncurses-devel \
+sqlite-devel \
+readline-devel \
+tk-devel \
+gdbm-devel \
+db4-devel \
+libpcap-devel \
+xz-devel \
+expat-devel \
+
+cd /usr/src/
+wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
+tar xf Python-3.10.7.tgz
+cd Python-3.10.7
+./configure --enable-optimizations
+make altinstall
+
+vi /etc/sudoers
+	Defaults
+	secure_path: "/user/local/bin"
+sudo pip install --upgrade pip
+
+
+
+# Manual Python install Ubuntu
+
+apt update -y
+apt install -y \
+wget \
+build-essential \
+libssl-dev \
+zlib1g-dev \
+libbz2-dev \
+libreadline-dev \
+libsqlite3-dev \
+libncurses5-dev \
+libncursesw5-dev \
+xz-utils \
+tk-dev \
+
+cd /usr/src
+wget https://www.python.org/ftp/python/3.10.7/Python-3.10.7.tgz
+tar xf Python-3.10.7.tgz
+cd Python-3.10.7
+./configure --enable-optimizations
+make altinstall
+
+vi /etc/sudoers
+	Defaults
+	secure_path: "/user/local/bin"
+sudo pip install --upgrade pip
+
+
+
+# Running .py
+
+vim hello.py
+
+#!/user/local/bin/env python3.10
+print('Hello World!')
+
+chmod u+x hello.py
+mv hello.py hello
+./hello
+
+
+
+# Bin directory
+
+cd ~
+echo "export PATH=$HOME/bin:$PATH" >> ~/.bashrc
+echo $PATH
+mv hello.py bin/hello.py
