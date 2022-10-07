@@ -597,7 +597,7 @@ try:
 	f = open(args.filename)
 	limit = args.limit
 except FileNotFoundError as err:
-	print(f"ErrorL {err}")
+	print(f"Error: {err}")
 else:
 	with f:
 		lines = f.readlines()
