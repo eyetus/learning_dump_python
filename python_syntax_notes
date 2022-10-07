@@ -639,9 +639,9 @@ print([word.strip() for word in words if snippet in word.lower()])
 			
 
 
-# ========================================================================
+##########################################################################
 # Example Programs
-# ========================================================================
+##########################################################################
 
 # BMI Calculator, using functions for user input and calculations with if statements. Executed with while loop calling functions
 
