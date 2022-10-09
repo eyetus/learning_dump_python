@@ -514,11 +514,25 @@ class Student:
         self.gpa = gpa
         self.is_on_probabtion = is_on_probation
 
-student1 = Student("Jim", "Business", 3.1, False)
-student2 = Student("Pam", "Art", 2.5, True)
-print(student1.name)
-print(student2.is_on_probabtion)
+    def on_honor_roll(self):
+        if self.gpa >= 3.5:
+            return True
+        else:
+            return False
 
+
+student1 = Student("Jim", "Business", 3.5, False)
+student2 = Student("Pam", "Art", 2.5, True)
+print(f"Student name: {student1.name}")
+print(f"On honor roll?: {student1.on_honor_roll()}")
+print(student2.major)
+print(student2.on_honor_roll())
+
+
+
+# ========================================================================
+# Inheritance
+# ========================================================================
 
 # Inheritance (using Person parent class to create Student inheriting properties/methods from parent)
 
@@ -539,6 +553,33 @@ class Student(Person):
   
 x = Student("Mike", "Olsen")
 x.printname()
+
+# ------------------------------------------------------------------------
+
+class Chef:
+    def make_chicken(self):
+        print("The chef makes a chicken")
+
+    def make_salad(self):
+        print("The chef makes a salad")
+
+    def make_special_dish(self):
+        print("The chef makes bbq ribs")
+
+
+class ChineseChef(Chef):
+    def make_special_dish(self):
+        print("The chef makes orange chicken")
+    def make_fried_rice(self):
+        print("The chef makes fried rice")
+
+myChef = Chef()
+myChef.make_special_dish()
+
+myChineseChef = ChineseChef()
+myChineseChef.make_chicken()
+myChineseChef.make_fried_rice()
+myChineseChef.make_special_dish()
 
 
 
