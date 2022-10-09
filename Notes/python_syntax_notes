@@ -544,6 +544,15 @@ for line in test_file:
 
 test_file.close()
 
+# ------------------------------------------------------------------------
+
+employee_file = open("employees.txt", "r")
+
+for employee in employee_file.readlines():
+    print(employee, end="")
+employee_file.close()
+
+# ------------------------------------------------------------------------
 
 # Writing to files
 
@@ -555,7 +564,7 @@ new_file.write(old_file.read())
 new_file.close()
 old_file.close()
 
-# Apend to end of txt file 'a' (with = auto close file)
+# Append to end of txt file 'a' (with = auto close file)
 with open('file.txt', 'a') as f:
 	f.write("Something")
 
@@ -564,7 +573,18 @@ f = open("file.txt", 'a')
 with f:
 	f.write("Something")
 
+# ------------------------------------------------------------------------
 
+employee_file = open("employees.txt", "a")
+
+employee_file.write("\nToby - Human Resources")
+employee_file.close()
+
+
+employee_file1 = open("employees1.txt", "w")
+
+employee_file.write("\nStart of new file")
+employee_file.close()
 
 # ========================================================================
 # Parsing command-line parameters 
