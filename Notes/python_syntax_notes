@@ -506,7 +506,7 @@ p1 = Person("John", 36)
 p1.myfunc()
 
 
-# Inheretance (using Persion parent class to create Student inhereting properties/methods from parent)
+# Inheritance (using Person parent class to create Student inheriting properties/methods from parent)
 
 class Person:
   def __init__(self, fname, lname):
@@ -702,10 +702,10 @@ print(f"Timer started at {time.strftime('%X', start_time)}")
 input("Press 'Enter' to stop timer")
 
 stop_time = time.localtime()
-differece = time.mktime(stop_time) - time.mktime(start_time)
+difference = time.mktime(stop_time) - time.mktime(start_time)
 
 print(f"Timer stopped at {time.strftime('%X', stop_time)}")
-print(f"Total time: {differece} seconds")
+print(f"Total time: {difference} seconds")
 
 
 # importing only the required functions from 'time' package:
@@ -719,10 +719,10 @@ print(f"Timer started at {strftime('%X', start_time)}")
 input("Press 'Enter' to stop timer")
 
 stop_time = localtime()
-differece = mktime(stop_time) - mktime(start_time)
+difference = mktime(stop_time) - mktime(start_time)
 
 print(f"Timer stopped at {strftime('%X', stop_time)}")
-print(f"Total time: {differece} seconds")
+print(f"Total time: {difference} seconds")
 
 
 # ------------------------------------------------------------------------
@@ -766,7 +766,7 @@ except OSError:
 
 subtotal = 0.0
 
-for path in glob.iglob('./new/reciept-[0-9]*.json'):
+for path in glob.iglob('./new/receipt-[0-9]*.json'):
 	with open(path) as f:
 		content = json.load(f)
 		subtotal += float(content['value'])
@@ -774,4 +774,4 @@ for path in glob.iglob('./new/reciept-[0-9]*.json'):
 	shutil.move(path, destination)
 	print(f"moved '{path}' to '{destination}'")
 
-print(f"Reciept subtotal: ${round(subtotal, 2)}")
+print(f"Receipt subtotal: ${round(subtotal, 2)}")
