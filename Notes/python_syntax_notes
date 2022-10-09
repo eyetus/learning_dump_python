@@ -505,6 +505,20 @@ class Person:
 p1 = Person("John", 36)
 p1.myfunc()
 
+# ------------------------------------------------------------------------
+
+class Student:
+    def __init__(self, name, major, gpa, is_on_probation):
+        self.name = name
+        self.major = major
+        self.gpa = gpa
+        self.is_on_probabtion = is_on_probation
+
+student1 = Student("Jim", "Business", 3.1, False)
+student2 = Student("Pam", "Art", 2.5, True)
+print(student1.name)
+print(student2.is_on_probabtion)
+
 
 # Inheritance (using Person parent class to create Student inheriting properties/methods from parent)
 
@@ -512,7 +526,6 @@ class Person:
   def __init__(self, fname, lname):
     self.firstname = fname
     self.lastname = lname
-
 
   def printname(self):
     print(self.firstname, self.lastname)
@@ -775,3 +788,36 @@ for path in glob.iglob('./new/receipt-[0-9]*.json'):
 	print(f"moved '{path}' to '{destination}'")
 
 print(f"Receipt subtotal: ${round(subtotal, 2)}")
+
+# ------------------------------------------------------------------------
+
+# Multiple choice quiz
+
+class Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+
+
+def run_test(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score += 1
+    print(f"You got {str(score)}/{str(len(questions))} correct")
+
+
+question_prompts = [
+    "What colour are apples?\n(a) Red/Green\n(b) Purple\n(c) Orange\n\n",
+    "What colour are Bananas?\n(a) Teal\n(b) Magenta\n(c) Yellow\n\n",
+    "What colour are Strawberries?\n(a) Yellow\n(b) Red\n(c) Blue\n\n"
+]
+
+questions = [
+    Question(question_prompts[0], "a"),
+    Question(question_prompts[1], "c"),
+    Question(question_prompts[2], "b")
+]
+
+run_test(questions)
