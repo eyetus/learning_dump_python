@@ -249,6 +249,20 @@ print(output)
 # While Loop
 # ========================================================================
 
+name = ""
+while len(name) == 0:
+    name = input("Input your name: ")
+
+print("Hello " +name)
+
+name = None
+while not name:
+    name = input("Input your name: ")
+
+print("Hello " + name)
+
+# ------------------------------------------------------------------------
+
 i = 1
 while i <= 5:
     print(i)
@@ -368,6 +382,15 @@ for numbers in range(10):
 
 # ------------------------------------------------------------------------
 
+import time
+
+for seconds in range(10, 0, -1):
+    print(seconds)
+    time.sleep(1)
+print("Happy new year!")
+
+# ------------------------------------------------------------------------
+
 prices = [10, 20, 30]
 total = 0
 for price in prices:
@@ -459,6 +482,17 @@ number_grid = [
 for row in number_grid:
     for col in row:
         print(col)
+
+# ------------------------------------------------------------------------
+
+rows = int(input("How many rows?: "))
+columns = int(input("How many columns? "))
+symbol = input("Enter a symbol to use: ")
+
+for i in range(rows):
+    for j in range(columns):
+        print(symbol, end="")
+    print()
 
 
 # ========================================================================
