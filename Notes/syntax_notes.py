@@ -816,7 +816,8 @@ employee_file.close()
 
 # Writing to files
 
-# Open new file for reading & writing ('w' = truncates file first, '+' = r/w)
+# Open new file for reading & writing ('w' = truncates file first, '+' = r/w
+old_file = open('old_file.txt', 'r')
 new_file = open('new_file.txt', 'r+')
 
 # Read from another file and add to new file (then close)
@@ -863,7 +864,7 @@ args = parser.parse_args()
 
 # Opens filename.txt, reads and reverses lines & strings (if --limit arg provided also)
 with open(args.filename) as f:
-    line = f.readlines()
+    lines = f.readlines()
     lines.reverse()
 
     if args.limit:
@@ -924,8 +925,8 @@ print([word.strip() for word in words if snippet in word.lower()])
 # BMI Calculator, using functions for user input and calculations with if statements. Executed with while loop calling functions
 
 def gather_info():
-    height = float(nput("What is your height? (inches or meters) "))
-    weight = float(nput("What is your weight? (pounds or kilograms) "))
+    height = float(input("What is your height? (inches or meters) "))
+    weight = float(input("What is your weight? (pounds or kilograms) "))
     unit = input("Are your mearsurements in metric or imperial units? ").lower().strip()
     return (height, weight, unit)
 
@@ -1046,7 +1047,7 @@ class Question:
 def run_test(questions):
     score = 0
     for question in questions:
-        answer = input(question.prompt)
+        answer = input(question.prompt).lower()
         if answer == question.answer:
             score += 1
     print(f"You got {str(score)}/{str(len(questions))} correct")
