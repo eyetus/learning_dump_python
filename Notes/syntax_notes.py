@@ -45,6 +45,43 @@ print(square(3))
 
 # ------------------------------------------------------------------------
 
+#args
+def add(*args):
+    sum = 0
+    args = list(args)
+    args[0] = 0
+    for i in args:
+        sum += i
+    return sum
+
+print(add(1,2,3,4,5,6,7,8))
+
+
+#kwargs
+def hello(**kwargs):
+    print (f"Hello {kwargs['first']} {kwargs['last']}")
+
+hello(first='Rich', middle='Dude', last='Edwards')
+
+# Or
+
+def hello(**kwargs):
+    print('Hello', end=' ')
+    for key, value in kwargs.items():
+        print(value, end=' ')
+
+hello(title='Mr', first='Rich', middle='Dude', last='Edwards')
+print()
+hello(colour='red', colour2='blue', colour3='green', colour4='yellow')
+
+# Output
+'''
+Hello Mr Rich Dude Edwards 
+Hello red blue green yellow
+'''
+
+# ------------------------------------------------------------------------
+
 def func_emoji(message):
     words = message.split(" ")
     emoji_map = {
@@ -184,91 +221,6 @@ for letter in name:
 
 
 # ========================================================================
-# Dictionaries
-# ========================================================================
-
-monthConversions = {
-    "Jan": "January",
-    "Feb": "February",
-    "Mar": "March",
-    "Apr": "April",
-    "May": "May",
-    "Jun": "June",
-    "Jul": "July",
-    "Aug": "August",
-    "Sep": "September",
-    "Oct": "October",
-    "Nov": "November",
-    "Dec": "December"
-}
-
-print(monthConversions["Jan"])
-print(monthConversions.get("Dec"))
-print(monthConversions.get("Hello", "'Hello' not in dictionary!"))
-
-# ------------------------------------------------------------------------
-
-customer = {
-    "name": "John Smith",
-    "age": 30,
-    "is_verified": True,
-}
-
-print(customer.get("age"))
-print(customer.get("email", "Default response"))  # will return ‘None’ if key doesn’t exist
-print(customer["name"])
-customer["birthdate"] = "1st Jan 1980"
-
-# ------------------------------------------------------------------------
-
-list_of_points = [(1, 2), (2, 3), (4, 5)]
-for x, y in list_of_points:
-    print(f"x: {x}, y: {y}")
-
-# ------------------------------------------------------------------------
-
-ages = {
-    'kevin': 59,
-    'bob': 40,
-    "kayla": 21
-}
-
-for name, age in ages.items():
-    print(f"Person named: {name}")
-    print(f"Age of: {age}")
-
-# ------------------------------------------------------------------------
-
-digitmap = {
-    "1": "One",
-    "2": "Two",
-    "3": "Three",
-    "4": "Four"
-}
-
-phone = input("Phone: ")
-output = ""
-
-for number in phone:
-    output += digitmap.get(number, "!") + " "
-print(output)
-
-# ------------------------------------------------------------------------
-
-message = input("> ")
-words = message.split(" ")
-emoji_map = {
-    ":)": "🙂",
-    ":(": "😞",
-    "xD": "😆",
-    "rofl": "🤣"
-}
-output = ""
-for word in words:
-    output += emoji_map.get(word, word) + " "
-print(output)
-
-# ========================================================================
 # While Loop
 # ========================================================================
 
@@ -295,11 +247,18 @@ print("Done")
 
 # ------------------------------------------------------------------------
 
+while True:
+    name = input('Enter you name: ')
+    if name != '':
+        break
+
+# ------------------------------------------------------------------------
+
 count = 0
 while count < 10:
     if count % 2 == 0:
         count += 1
-        coninue
+        continue
     print(f"We're counting odd numbers: {count}")
     count += 1
 
@@ -380,6 +339,7 @@ quit - to quit
         break
     else:
         print("Sorry I don't understand that!")
+
 
 # ========================================================================
 # For Loop
@@ -479,17 +439,6 @@ for word in words:
     output += emoji_map.get(word, word) + " "
 print(output)
 
-# ========================================================================
-# 2D Lists
-# ========================================================================
-
-number_grid = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [0]
-]
-
-print(number_grid[0][0])
 
 # ========================================================================
 # Nested For Loop
@@ -516,6 +465,208 @@ for i in range(rows):
     for j in range(columns):
         print(symbol, end="")
     print()
+
+# ------------------------------------------------------------------------
+
+phone_number = '123-456-789'
+
+for i in phone_number:
+    if i == '-':
+        continue
+    print(i, end='')
+
+# ------------------------------------------------------------------------
+
+for i in range(1,21):
+    if i == 13:
+        pass
+    else:
+        print(i)
+
+
+# ========================================================================
+# Lists
+# ========================================================================
+
+names = ['Rich', 'Georgina', 'Liam']
+
+names.append('Steven')
+names.remove('Steven')
+names.pop()
+names.insert(0, 'Mum')
+names.sort()
+names.clear()
+
+
+# ========================================================================
+# 2D Lists
+# ========================================================================
+
+number_grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [0]
+]
+
+print(number_grid[0][0])
+
+# ------------------------------------------------------------------------
+
+drinks = ['coffee', 'soda', 'tea']
+dinner = ['pizza', 'hamburger', 'hotdog']
+dessert = ['cake', 'ice cream']
+
+food = [drinks, dinner, dessert]
+
+print(food[0])
+print(food[0][2])
+
+
+# ========================================================================
+# Tuples
+# ========================================================================
+
+student = ('John', 21, 'Male')
+
+student.count('John')
+student.index('Male')
+
+
+# ========================================================================
+# Set
+# ========================================================================
+
+dictionary = {'Rich', 'Georgina', 'Liam', 'Dog'}
+dictionary2 = {'Dad', 'Mum', 'Son', 'Dog'}
+main_dict = dictionary.union(dictionary2)
+
+dictionary.add('Steven')
+dictionary.remove('Steven')
+dictionary.clear()
+dictionary.update(dictionary2)
+
+print(dictionary.difference(dictionary2)) # shows what is missing
+print(dictionary.intersection(dictionary2)) # shows what they both have
+
+
+# ========================================================================
+# Dictionary
+# ========================================================================
+
+monthConversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+monthConversions.update({"Month_Initials": "Month"})
+monthConversions.pop("Month_Initials")
+monthConversions.clear()
+
+print(monthConversions["Jan"])
+print(monthConversions.get("Dec"))
+print(monthConversions.get("Hello", "'Hello' not in dictionary!"))
+print(monthConversions.keys())
+print(monthConversions.values())
+print(monthConversions.items())
+
+for key, value in monthConversions.items():
+    print(key, value)
+
+
+# ------------------------------------------------------------------------
+
+customer = {
+    "name": "John Smith",
+    "age": 30,
+    "is_verified": True,
+}
+
+print(customer.get("age"))
+print(customer.get("email", "Default response"))  # will return ‘None’ if key doesn’t exist
+print(customer["name"])
+customer["birthdate"] = "1st Jan 1980"
+
+# ------------------------------------------------------------------------
+
+list_of_points = [(1, 2), (2, 3), (4, 5)]
+for x, y in list_of_points:
+    print(f"x: {x}, y: {y}")
+
+# ------------------------------------------------------------------------
+
+ages = {
+    'kevin': 59,
+    'bob': 40,
+    "kayla": 21
+}
+
+for name, age in ages.items():
+    print(f"Person named: {name}")
+    print(f"Age of: {age}")
+
+# ------------------------------------------------------------------------
+
+digitmap = {
+    "1": "One",
+    "2": "Two",
+    "3": "Three",
+    "4": "Four"
+}
+
+phone = input("Phone: ")
+output = ""
+
+for number in phone:
+    output += digitmap.get(number, "!") + " "
+print(output)
+
+# ------------------------------------------------------------------------
+
+message = input("> ")
+words = message.split(" ")
+emoji_map = {
+    ":)": "🙂",
+    ":(": "😞",
+    "xD": "😆",
+    "rofl": "🤣"
+}
+output = ""
+for word in words:
+    output += emoji_map.get(word, word) + " "
+print(output)
+
+
+# ========================================================================
+# Exceptions
+# ========================================================================
+
+try:
+    numerator = int(input('Enter a number to divide: '))
+    denominator = int(input('Enter a number to divide by: '))
+    result = numerator / denominator
+except ZeroDivisionError as e:
+    print("Can't device by Zero!")
+    print('Error: ', e)
+except ValueError as e:
+    print('Enter only numbers!')
+    print('Error: ', e)
+except Exception as e:
+    print('Something went wrong!')
+    print('Error: ', e)
+else:
+    print(result)
+finally:
+    print('Done!')
 
 
 # ========================================================================
@@ -704,8 +855,8 @@ import argparse
 parser = argparse.ArgumentParser(description='Read a file in reverse')
 parser.add_argument('filename', help='the file to read')
 parser.add_argument('--limit', '-l', type=int, help='the number of lines to read')
-parser.add_argument('--version', '-v'
-action = version, version = '%(prog)s 1.0')
+parser.add_argument('--version', '-v')
+action = version, version = '%(prog)s 1.0'
 
 # Parse agrs to variable 'args'
 args = parser.parse_args()
